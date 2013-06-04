@@ -53,7 +53,7 @@ $if(url)$
 $endif$
 $if(graphics)$
 \usepackage{graphicx}
-% Redefine \includegraphics so that, unless explicit options are
+% Set \includegraphics defaults so that, unless explicit options are
 % given, the image width will not exceed the width of the page.
 % Images get their normal width if they fit onto the page, but
 % are scaled down if they would overflow the margins.
@@ -66,8 +66,7 @@ $if(graphics)$
   \fi
 }
 \makeatother
-\let\Oldincludegraphics\includegraphics
-\renewcommand{\includegraphics}[2][]{\Oldincludegraphics[width=\ScaleIfNeeded]{#2}}
+\setkeys{Gin}{width=\ScaleIfNeeded}
 $endif$
 
 % Comment these out if you don't want a slide with just the
